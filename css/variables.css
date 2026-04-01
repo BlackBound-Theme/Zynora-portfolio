@@ -1,0 +1,108 @@
+:root {
+  /*
+   * ZYNORA — Premium Portfolio Design Tokens
+   * Modify these variables to completely rebrand the template.
+   * Dark mode is the default layer; light mode overrides are at the bottom.
+   */
+
+  /* ── Background Palette ───────────────────────────────── */
+  --color-bg-primary:   #050507;
+  --color-bg-secondary: #0C0C10;
+  --color-bg-card:      rgba(255, 255, 255, 0.035);
+  --color-bg-elevated:  #111118;
+
+  /* ── Text Palette ─────────────────────────────────────── */
+  --color-text-primary:   #F5F5F7;
+  --color-text-secondary: #72727A;
+  --color-text-muted:     #3A3A45;
+
+  /* ── Brand Accent (Electric Cyan) ─────────────────────── */
+  --color-accent:       #00F0FF;
+  --color-accent-dim:   rgba(0, 240, 255, 0.12);
+  --color-accent-glow:  rgba(0, 240, 255, 0.25);
+  --color-accent-soft:  rgba(0, 240, 255, 0.06);
+
+  /* ── Glass Morphism Surfaces ──────────────────────────── */
+  --glass-bg:     rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-hover:  rgba(255, 255, 255, 0.08);
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Fluid scale (min at 320px, max at 1920px) */
+  --text-xs:   clamp(0.7rem,   0.65vw + 0.55rem, 0.8rem);
+  --text-sm:   clamp(0.8rem,   0.75vw + 0.65rem, 0.95rem);
+  --text-base: clamp(0.95rem,  0.9vw  + 0.75rem, 1.1rem);
+  --text-lg:   clamp(1.15rem,  1.4vw  + 0.9rem,  1.4rem);
+  --text-xl:   clamp(1.4rem,   1.9vw  + 1.1rem,  1.9rem);
+  --text-2xl:  clamp(1.8rem,   2.8vw  + 1.3rem,  2.8rem);
+  --text-hero: clamp(2.8rem,   5.5vw  + 1.5rem,  5.8rem);
+
+  /* ── Spacing System (4px base) ────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Easing & Transitions ─────────────────────────────── */
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --transition-fast:   0.18s var(--ease-smooth);
+  --transition-medium: 0.38s var(--ease-smooth);
+  --transition-slow:   0.7s  var(--ease-smooth);
+
+  /* ── Borders & Radius ─────────────────────────────────── */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-xl:   32px;
+  --radius-pill: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.4);
+  --shadow-md:  0 8px 32px rgba(0,0,0,0.5);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.7);
+  --shadow-glow: 0 0 30px var(--color-accent-glow);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LIGHT THEME — Premium warm-white, ink text, vivid violet accent
+   ───────────────────────────────────────────────────────── */
+[data-theme='light'] {
+  --color-bg-primary:   #F8F8FC;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-card:      rgba(0, 0, 0, 0.025);
+  --color-bg-elevated:  #EEEEF6;
+
+  --color-text-primary:   #0A0A14;
+  --color-text-secondary: #5A5A70;
+  --color-text-muted:     #AAAAB8;
+
+  /* Violet accent in light — looks luxurious, not garish */
+  --color-accent:      #5B00E8;
+  --color-accent-dim:  rgba(91, 0, 232, 0.1);
+  --color-accent-glow: rgba(91, 0, 232, 0.2);
+  --color-accent-soft: rgba(91, 0, 232, 0.05);
+
+  --glass-bg:     rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.07);
+  --glass-hover:  rgba(0, 0, 0, 0.04);
+
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.14);
+  --shadow-glow: 0 0 30px rgba(91, 0, 232, 0.18);
+}

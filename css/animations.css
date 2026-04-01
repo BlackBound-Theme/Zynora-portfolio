@@ -1,0 +1,156 @@
+/* ── @keyframes ──────────────────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%,-50%) translateY(0); }
+  50%       { transform: translate(-50%,-50%) translateY(-14px); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  60%  { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(1);   opacity: 0; }
+}
+
+@keyframes typingCursor {
+  from, to { border-color: transparent; }
+  50%       { border-color: var(--color-accent); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+@keyframes shimmer {
+  from { background-position: -400px 0; }
+  to   { background-position: 400px 0; }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--color-accent-glow); }
+  50%       { box-shadow: 0 0 50px var(--color-accent-glow), 0 0 80px var(--color-accent-dim); }
+}
+
+@keyframes borderSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Particle dots (hero background) ─────────────────────── */
+@keyframes particleDrift {
+  0%   { transform: translateY(0px)   translateX(0px)  opacity(1); }
+  100% { transform: translateY(-80px) translateX(20px); opacity: 0; }
+}
+
+/* ── Scroll Reveal Classes (IntersectionObserver driven) ──── */
+.reveal {
+  opacity: 0; transform: translateY(44px);
+  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-smooth);
+  will-change: opacity, transform;
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0; transform: translateX(-44px);
+  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-smooth);
+}
+.reveal-left.active { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0; transform: translateX(44px);
+  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-smooth);
+}
+.reveal-right.active { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0; transform: scale(0.9);
+  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-spring);
+}
+.reveal-scale.active { opacity: 1; transform: scale(1); }
+
+/* Stagger delays */
+.delay-50  { transition-delay:  50ms !important; }
+.delay-100 { transition-delay: 100ms !important; }
+.delay-150 { transition-delay: 150ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+.delay-600 { transition-delay: 600ms !important; }
+
+/* ── Timeline Glow Rail ───────────────────────────────────── */
+.tl-rail {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--glass-border); border-radius: 2px;
+}
+.tl-fill {
+  position: absolute; top: 0; left: 0; width: 100%; height: 0%;
+  background: linear-gradient(to bottom, var(--color-accent), rgba(0,240,255,0.3));
+  border-radius: 2px; box-shadow: 0 0 14px var(--color-accent-glow);
+  transition: height 0.12s linear;
+}
+[data-theme='light'] .tl-fill {
+  background: linear-gradient(to bottom, var(--color-accent), rgba(91,0,232,0.3));
+  box-shadow: 0 0 14px var(--color-accent-glow);
+}
+
+.tl-dot {
+  position: absolute; left: -54px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--color-bg-primary); border: 2px solid var(--color-text-muted);
+  transition: border-color 0.4s, background 0.4s, box-shadow 0.4s; z-index: 2;
+}
+.tl-dot.lit {
+  background: var(--color-accent); border-color: var(--color-accent);
+  box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+/* ── Animated gradient headline ─────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, rgba(0,240,255,0.9) 50%, #fff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease infinite;
+}
+[data-theme='light'] .gradient-text {
+  background: linear-gradient(135deg, #0A0A14 0%, var(--color-accent) 50%, #0A0A14 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ── Glowing card border animation ──────────────────────── */
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: ''; position: absolute; inset: -1px;
+  border-radius: inherit; padding: 1px;
+  background: linear-gradient(var(--angle, 0deg), var(--color-accent), transparent, var(--color-accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity 0.4s;
+  animation: borderSpin 4s linear infinite;
+}
+.glow-border:hover::before { opacity: 1; }
+
+/* ── Stats counter pulse ────────────────────────────────── */
+.big-num { display: inline-block; }
+.big-num.counting { animation: glowPulse 0.5s ease; }
